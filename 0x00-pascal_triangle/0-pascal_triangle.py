@@ -11,10 +11,10 @@ def pascal_triangle(n):
     pascal.append([1])
     if n == 1:
         return pascal
-    nline = []
-    for i in range(1, n + 1):
-        nline = [nline[j] + nline[j - 1] for j in range(1, len(nline))]
-        nline.append(1)
-        nline.insert(0, 1)
-        pascal.append(nline)
+    level = []
+    for i in range(1, n):
+        level = [level[j] + level[j - 1] for j in range(1, len(level))]
+        level.append(1)
+        level.insert(0, 1)
+        pascal.append(level)
     return pascal
