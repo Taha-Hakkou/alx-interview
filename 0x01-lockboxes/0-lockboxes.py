@@ -4,6 +4,7 @@
 
 def canUnlockAll(boxes):
     """ determines if all the boxes can be opened """
+    n = len(boxes)
     opened = []
     found = [0]
     while found != []:
@@ -13,7 +14,8 @@ def canUnlockAll(boxes):
         for key in keys:
             found += boxes[key]
         found = list(set(found).difference(opened))
+        found = list(filter(lambda x: x < n, found))
 
-    if len(opened) == len(boxes):
+    if len(opened) == n:
         return True
     return False
