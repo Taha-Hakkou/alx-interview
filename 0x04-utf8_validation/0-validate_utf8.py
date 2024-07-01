@@ -21,5 +21,5 @@ def validUTF8(data: List[int]) -> bool:
                 return False
             data = data[4:]
         else:
-            return False
+            return True
     return True
