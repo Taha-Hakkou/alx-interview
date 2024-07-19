@@ -11,3 +11,12 @@ if __name__ == "__main__":
 
     rotate_2d_matrix(matrix)
     print(matrix)
+
+    print('==============')
+
+    matrix2 = [[1, 11, 13, 19],
+               [41, 32, 6, 22],
+               [55, 21, 41, 66],
+               [77, 29, 78, 2]]
+    rotate_2d_matrix(matrix2)
+    print(matrix2)
