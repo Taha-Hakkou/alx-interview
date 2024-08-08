@@ -8,10 +8,10 @@ def isWinner(x, nums):
         return None
     scores = {'Maria': 0, 'Ben': 0}
     for n in nums:
-        n_array = [i + 1 for i in range(n)]
+        n_array = [i + 1 for i in range(1, n)]
         essays = 0
-        while n_array != [1]:
-            prime = n_array[1]
+        while n_array != []:
+            prime = n_array[0]
             n_array = [i for i in n_array if i % prime != 0]
             essays += 1
         round_winner = 'Ben' if essays % 2 == 0 else 'Maria'
