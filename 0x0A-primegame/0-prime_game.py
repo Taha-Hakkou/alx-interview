@@ -4,11 +4,11 @@
 
 def isWinner(x, nums):
     """ Returns the winner of the PrimeGame """
-    if nums is None or x != len(nums):
+    if x < 1 or not nums:
         return None
     scores = {'Maria': 0, 'Ben': 0}
     for n in nums:
-        n_array = [i for i in range(1, n + 1)]
+        n_array = [i + 1 for i in range(n)]
         essays = 0
         while n_array != [1]:
             prime = n_array[1]
@@ -16,9 +16,6 @@ def isWinner(x, nums):
             essays += 1
         round_winner = 'Ben' if essays % 2 == 0 else 'Maria'
         scores[round_winner] += 1
-    if scores['Maria'] > scores['Ben']:
-        return 'Maria'
-    elif scores['Maria'] < scores['Ben']:
-        return 'Ben'
-    else:
+    if scores['Maria'] == scores['Ben']:
         return None
+    return 'Maria' if scores['Maria'] > scores['Ben'] else 'Ben'
