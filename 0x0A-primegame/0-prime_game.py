@@ -2,7 +2,7 @@
 """ 0-prime_game """
 
 
-def isWinner(x: int, nums: list[int]) -> str:
+def isWinner(x, nums):
     """ Returns the winner of the PrimeGame """
     scores = {'Maria': 0, 'Ben': 0}
     for n in nums:
