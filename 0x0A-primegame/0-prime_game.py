@@ -6,6 +6,8 @@ def isWinner(x, nums):
     """ Returns the winner of the PrimeGame """
     scores = {'Maria': 0, 'Ben': 0}
     for n in nums:
+        if x == 0:
+            break
         n_array = {i for i in range(1, n + 1)}
         essays = 0
         while n_array != {1}:
@@ -16,6 +18,7 @@ def isWinner(x, nums):
             scores['Ben'] += 1
         else:
             scores['Maria'] += 1
+        x -= 1
     if scores['Maria'] > scores['Ben']:
         return 'Maria'
     elif scores['Maria'] < scores['Ben']:
